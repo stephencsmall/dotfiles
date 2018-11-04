@@ -2,7 +2,7 @@
 
 function apt_base_packages {
 	echo "Installing base packages."
-	apt-get install -y zsh tmux htop vim curl gpg zip
+	apt-get install -y zsh tmux htop vim curl gpg zip jq 
 }
 
 function brew_base_packages {
@@ -11,6 +11,11 @@ function brew_base_packages {
 }
 
 system_type=$(uname -s)
+
+cd "$HOME"
+
+echo "Init submodules"
+yadm submodule update --recursive --init
 
 if [ "$system_type" = "Darwin" ]; then
 	echo "I'm a MacOS system."
