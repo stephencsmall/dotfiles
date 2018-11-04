@@ -11,5 +11,6 @@ silent! if plug#begin()
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'vim-airline/vim-airline'
 	Plug 'tpope/vim-surround'
+	Plug 'rizzatti/dash.vim'
 	call plug#end()
 endif
