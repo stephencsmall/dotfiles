@@ -5,5 +5,11 @@ endif
 
 silent! if plug#begin()
 	Plug 'airblade/vim-gitgutter'
+	Plug 'elzr/vim-json'
+	Plug 'scrooloose/nerdtree'
+	Plug 'scrooloose/syntastic'
+	Plug 'scrooloose/nerdcommenter'
+	Plug 'vim-airline/vim-airline'
+	Plug 'tpope/vim-surround'
 	call plug#end()
 endif
