@@ -1,0 +1,8 @@
+[user]
+	name = Steve Small
+	email = stephencsmall@gmail.com
+	username = ssmall
+
+[core]
+	editor = vim
+

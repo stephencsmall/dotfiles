@@ -1,0 +1,35 @@
+#!/bin/bash
+
+function apt_base_packages {
+	echo "Installing base packages."
+	apt-get install -y zsh tmux htop vim curl
+}
+
+function brew_base_packages {
+	echo "Installing base packages."
+	brew install tmux htop curl
+}
+
+system_type=$(uname -s)
+
+if [ "$system_type" = "Darwin" ]; then
+	echo "I'm a MacOS system."
+	if [ ! command -v brew >/dev/null 2>&1 ]; then
+		echo "Installing homebrew"
+		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	fi
+	brew_base_packages
+fi
+
+if [ "$system_type" = "Linux" ]; then
+	echo "I'm a Linux system."
+	if [ "$(lsb_release -is)" = "Ubuntu" ] || [ "$(lsb_release -is)" = "Ubuntu" ] ; then
+		echo "I'm an apt-based system."
+		apt_base_packages
+	fi
+fi
+
+if command -v vim >/dev/null 2>&1; then
+	echo "Bootstraping Vim"
+	vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+fi
