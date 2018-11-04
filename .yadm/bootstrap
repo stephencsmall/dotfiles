@@ -7,7 +7,7 @@ function apt_base_packages {
 
 function brew_base_packages {
 	echo "Installing base packages."
-	brew install tmux htop curl gpg
+	brew install tmux htop curl gpg reattach-to-user-namespace
 }
 
 system_type=$(uname -s)
