@@ -2,12 +2,12 @@
 
 function apt_base_packages {
 	echo "Installing base packages."
-	apt-get install -y zsh tmux htop vim curl
+	apt-get install -y zsh tmux htop vim curl gpg zip
 }
 
 function brew_base_packages {
 	echo "Installing base packages."
-	brew install tmux htop curl
+	brew install tmux htop curl gpg
 }
 
 system_type=$(uname -s)
@@ -41,5 +41,4 @@ if [ ! -d "$ZPLUG_HOME" ]; then
 	su - $SUDO_USER -c "curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh"
 	su - $SUDO_USER -l -c "zsh -c 'source .zshrc && zplug install'"
 fi
-
 
