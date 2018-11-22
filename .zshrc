@@ -42,4 +42,4 @@ setopt HIST_VERIFY
 setopt HIST_BEEP
 
 # END zplug
-zplug load --verbose
+zplug load
