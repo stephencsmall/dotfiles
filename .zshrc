@@ -5,6 +5,9 @@
 source ~/.zplug/init.zsh
 
 # Other zplug plugins
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
 
 # Load the spaceship prompt
