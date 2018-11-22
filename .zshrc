@@ -27,3 +27,9 @@ zplug load
 bindkey -v
 export KEYTIMEOUT=1
 
+# History
+export SAVEHIST=200000
+export HISTFILE=~/.zsh_history
+setopt inc_append_history
+setopt share_history
+
