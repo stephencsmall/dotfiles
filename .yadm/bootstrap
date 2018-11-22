@@ -2,12 +2,12 @@
 
 function apt_base_packages {
 	echo "Installing base packages."
-	apt-get install -y zsh tmux htop vim curl gpg zip jq 
+	apt-get install -y zsh tmux htop vim curl gpg zip jq peco
 }
 
 function brew_base_packages {
 	echo "Installing base packages."
-	brew install tmux htop curl gpg reattach-to-user-namespace
+	brew install tmux htop curl gpg reattach-to-user-namespace peco
 }
 
 system_type=$(uname -s)
