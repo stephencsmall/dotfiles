@@ -24,9 +24,6 @@ SPACESHIP_HOST_SHOW=always
 SPACESHIP_KUBECONTEXT_PREFIX="with k8s "
 SPACESHIP_HG_SHOW=false
 
-# END zplug
-zplug load
-
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -34,6 +31,15 @@ export KEYTIMEOUT=1
 # History
 export SAVEHIST=200000
 export HISTFILE=~/.zsh_history
-setopt inc_append_history
-setopt share_history
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+setopt HIST_BEEP
 
+# END zplug
+zplug load --verbose
