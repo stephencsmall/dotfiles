@@ -25,10 +25,11 @@ SPACESHIP_KUBECONTEXT_PREFIX="with k8s "
 SPACESHIP_HG_SHOW=false
 
 # vi mode
-bindkey -v
+#bindkey -v
 export KEYTIMEOUT=1
 
 # History
+export HISTSIZE=2000000
 export SAVEHIST=200000
 export HISTFILE=~/.zsh_history
 setopt EXTENDED_HISTORY
@@ -43,3 +44,4 @@ setopt HIST_BEEP
 
 # END zplug
 zplug load
+export PATH="/usr/local/sbin:$PATH"
