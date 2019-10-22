@@ -25,10 +25,11 @@ SPACESHIP_KUBECONTEXT_PREFIX="with k8s "
 SPACESHIP_HG_SHOW=false
 
 # vi mode
-bindkey -v
+#bindkey -v
 export KEYTIMEOUT=1
 
 # History
+export HISTSIZE=2000000
 export SAVEHIST=200000
 export HISTFILE=~/.zsh_history
 setopt EXTENDED_HISTORY
@@ -43,3 +44,27 @@ setopt HIST_BEEP
 
 # END zplug
 zplug load
+
+export GOPATH=~/.go
+export PATH=$PATH:~/Library/Python/3.7/bin:~/Library/Python/2.7/bin
+export PATH=/usr/local/tflint/bin:$PATH
+
+#OktaAWSCLI
+if [[ -f "$HOME/.okta/bash_functions" ]]; then
+    . "$HOME/.okta/bash_functions"
+fi
+if [[ -d "$HOME/.okta/bin" && ":$PATH:" != *":$HOME/.okta/bin:"* ]]; then
+    PATH="$HOME/.okta/bin:$PATH"
+fi
+
+alias tree=alder
+alias ls="exa -l"
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/steve.small/.sdkman"
+[[ -s "/Users/steve.small/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/steve.small/.sdkman/bin/sdkman-init.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
