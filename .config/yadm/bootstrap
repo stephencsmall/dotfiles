@@ -35,15 +35,18 @@ if [ "$system_type" = "Linux" ]; then
 fi
 
 if command -v vim >/dev/null 2>&1; then
-	echo "Bootstraping Vim"
-	su $SUDO_USER -c "vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'"
+  echo "Bootstraping Vim"
+  vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
 fi
 
 ZPLUG_HOME = $HOME/.zplug
 
 if [ ! -d "$ZPLUG_HOME" ]; then
 	echo "Installing zplug"
-	su $SUDO_USER -c "curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh"
-	su $SUDO_USER -l -c "zsh -c 'source .zshrc && zplug install'"
+	curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+	zsh -c 'source .zshrc && zplug install'
 fi
-
+if [ ! -d ".powerline_fonts" ]; then
+	git clone https://github.com/powerline/fonts.git --depth=1 .powerline_fonts
+	cd .powerline_fonts && bash install.sh
+fi
